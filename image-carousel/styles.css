@@ -1,0 +1,49 @@
+.picture-frame {
+  border: 20px solid brown;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+
+.picture-slide {
+  margin: 10px 0;
+}
+
+.image {
+  width: 500px;
+}
+
+.sliders-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.arrow-image {
+  width: 40px;
+  cursor: pointer;
+}
+
+
+.slider {
+  width: 20px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.chosen-slider {
+  background-color: yellow;
+}
+
+.hide {
+  display: none;
+}
+
+
