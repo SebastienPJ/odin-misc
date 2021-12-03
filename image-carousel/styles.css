@@ -46,4 +46,35 @@
   display: none;
 }
 
+.fade-out {
+  animation: disappear 3s ease-out 0s 1 forwards normal;
+
+}
+
+
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+  
+}
+
+
+
+@keyframes appear {
+  from {
+
+  }
+
+  to {
+    
+  }
+  
+}
+
 
