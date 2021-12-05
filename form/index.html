@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Form Validation</title>
+</head>
+<body>
+  <form class="form">
+    <div class="input-container">
+      <label for="email">Email: </label>
+      <input type="email" name="email" id="email" class="input-field" required>
+      <span class="email-error error-message"></span>
+    </div>
+
+    <div class="input-container">
+      <label for="country">Country: </label>
+      <input list="list-of-countries" name="country" required id="country" class="input-field">
+      <span class="country-error error-message"></span>
+      
+    </div>
+
+    <datalist id="list-of-countries">
+      
+    </datalist>
+
+    <div class="input-container">
+      <label for="zip-code">Zip Code: </label>
+      <input type="text" name="zip-code" pattern="^\d{5}$" required id="zip-code" class="input-field">
+      <span class="zip-error error-message"></span>
+      
+    </div>
+
+    <div class="input-container">
+      <label for="password">Password: </label>
+      <input type="password" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required id="password" class="input-field">
+      <span class="password-error error-message"></span>
+      
+    </div>
+
+
+    <div class="input-container">
+      <label for="pass-confirmation">Re-enter Password: </label>
+      <input type="password" name="pass-confirmation" required id="pass-confirmation" class="input-field">
+      <span class="pass-confirm-error error-message"></span>
+      
+    </div>
+
+
+    <button type="submit" class="submit-button">Submit</button>
+  </form>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
