@@ -1,19 +1,66 @@
 const rightArrow = document.querySelector('.right-arrow');
+const leftArrow = document.querySelector('.left-arrow')
 const currentPicture = document.querySelector('.current-picture')
 const pictureContainer = document.querySelector('.container')
+const pictureSlides = document.querySelectorAll('.picture-slide')
+const dots = document.querySelectorAll('.slider')
+
+
+dots.forEach(dot => {
+  dot.addEventListener('click', function() {
+    showSlide(this.dataset.index)
+  })
+})
 
 rightArrow.addEventListener('click', function() {
-  console.log(this);
-  console.log(currentPicture);
-  currentPicture.style.transform = 'translate(200px, 0px)'
+  currentIndex += 1
+  showSlide(currentIndex)
 
+})
 
+leftArrow.addEventListener('click', function() {
+  currentIndex -= 1
+  showSlide(currentIndex)
 })
 
 
 
-function playAnimation(currentImage, nextImage) {
 
+let currentIndex = 0
+showSlide(currentIndex)
+
+
+
+// setInterval(() => {
+//   showSlide(currentIndex + 1)
+  
+// }, 5000);
+
+
+
+function showSlide(indexDesired) {
+  currentIndex = indexDesired;
+
+  if (indexDesired > pictureSlides.length - 1) {
+    currentIndex = 0
+  }
+
+  if (indexDesired < 0) {
+    currentIndex = pictureSlides.length - 1
+  }
+
+  pictureSlides.forEach(slide => {
+    slide.setAttribute('style', 'display: none')
+  })
+
+  dots.forEach(dot => {
+    dot.classList.remove('active')
+  })
+
+  pictureSlides[currentIndex].setAttribute('style', 'display: block')
+  dots[currentIndex].classList.add('active')
+
+  // console.log(index);
 }
 
 
